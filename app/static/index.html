@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikLoader - TikTok Downloader</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <header>
+          <h1 class="brand">tikloader</h1>
+          <p class="tagline">Download TikTok videos in seconds — no watermarks, no sign ups.</p>
+        </header>
+        <form id="fetch-form" class="url-form">
+          <label for="video-url" class="sr-only">TikTok video URL</label>
+          <input
+            id="video-url"
+            class="url-input"
+            name="url"
+            type="url"
+            placeholder="Paste TikTok link"
+            required
+          />
+          <button type="submit" class="primary-button">Preview</button>
+        </form>
+        <p class="disclaimer">
+          Paste any TikTok link to see available download options in HD video or MP3 audio. No login
+          required.
+        </p>
+      </section>
+
+      <section id="result" class="result hidden">
+        <div class="video-card">
+          <div class="thumbnail-wrapper">
+            <img id="video-thumbnail" class="thumbnail" alt="Video thumbnail" />
+            <span id="video-duration" class="duration"></span>
+          </div>
+          <div class="video-details">
+            <h2 id="video-title" class="video-title"></h2>
+            <p id="video-author" class="video-author"></p>
+            <p id="video-description" class="video-description"></p>
+          </div>
+        </div>
+
+        <div id="format-alert" class="alert hidden"></div>
+
+        <div class="options">
+          <h3>Video formats</h3>
+          <div id="video-options" class="option-list"></div>
+        </div>
+
+        <div class="options">
+          <h3>Audio only</h3>
+          <div id="audio-options" class="option-list"></div>
+        </div>
+      </section>
+
+      <section id="loading" class="loading hidden">
+        <div class="spinner" role="status" aria-live="polite"></div>
+        <p>Fetching video details…</p>
+      </section>
+
+      <section id="error" class="error hidden" role="alert"></section>
+    </main>
+
+    <footer class="footer">TikLoader respects content creators. Please download responsibly.</footer>
+
+    <script src="/static/script.js" type="module"></script>
+  </body>
+</html>
